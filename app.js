@@ -97,22 +97,26 @@ loadCards();
 
 
 
-async function openLetter(card){
+async function openLetter(card) {
 
     modal.classList.remove("hidden");
 
-    try{
+    try {
 
         const response = await fetch(card.letter);
+
+        if (!response.ok) {
+            throw new Error("Letter not found");
+        }
 
         const html = await response.text();
 
         modalBody.innerHTML = html;
 
-    }catch(error){
+    } catch (error) {
 
         modalBody.innerHTML = `
-            <h2>Oops!</h2>
+            <h2>Oops! 💌</h2>
             <p>I couldn't load this letter.</p>
         `;
 
