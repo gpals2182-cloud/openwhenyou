@@ -3,120 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open When ♡</title>
-
-    <meta name="theme-color" content="#F7F5F2">
+    <title>Open When</title>
 
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div id="app">
+<!-- Intro -->
 
-    <!-- Intro -->
+<section id="intro" class="screen active">
 
-    <section id="intro" class="screen active">
+    <div class="center">
 
-        <div class="intro-content">
+        <h1>Open When</h1>
 
-            <h1>Open When</h1>
+        <p>
+            Made with love,<br>
+            for Wyatt.
+        </p>
 
-            <p>
-                Made with love,<br>
-                for Wyatt.
-            </p>
-
-            <button id="continueBtn">
-                Tap to Continue
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- Password -->
-
-    <section id="passwordScreen" class="screen">
-
-        <div class="password-box">
-
-            <h2>Enter Password</h2>
-
-            <p class="hint">
-                The year and month we met.<br>
-                (4 digits)
-            </p>
-
-            <input
-                id="passwordInput"
-                type="password"
-                maxlength="4"
-                placeholder="••••">
-
-            <button id="unlockBtn">
-                Unlock
-            </button>
-
-            <p id="passwordMessage"></p>
-
-        </div>
-
-    </section>
-
-
-    <!-- Home -->
-
-    <main id="home" class="hidden">
-
-        <header>
-
-            <h1>Open When ♡</h1>
-
-            <p id="dayCounter">
-                ...
-            </p>
-
-        </header>
-
-        <section id="cardsContainer">
-
-        </section>
-
-    </main>
-
-</div>
-
-
-
-<!-- Letter Modal -->
-
-<div id="letterModal" class="modal hidden">
-
-    <div class="overlay"></div>
-
-    <div class="modal-content">
-
-        <button id="closeModal">
-            ×
+        <button id="continueBtn">
+            Tap to Continue
         </button>
-
-        <div id="modalBody"></div>
 
     </div>
 
+</section>
+
+<!-- Password -->
+
+<section id="passwordScreen" class="screen">
+
+    <div class="center">
+
+        <h2>Password</h2>
+
+        <input
+            id="passwordInput"
+            type="password"
+            maxlength="4"
+            placeholder="2509">
+
+        <p class="hint">
+            The year and month we met.
+        </p>
+
+        <button id="unlockBtn">
+            Unlock
+        </button>
+
+        <p id="passwordMessage"></p>
+
+    </div>
+
+</section>
+
+<!-- Home -->
+
+<section id="home" class="hidden">
+
+<header>
+
+<h1>Open When</h1>
+
+<p id="dayCounter"></p>
+
+</header>
+
+<main id="cardsContainer">
+
+</main>
+
+<footer>
+
+Made with love,<br>
+just for you.
+
+</footer>
+
+</section>
+
+<!-- Letter -->
+
+<div id="letterModal" class="hidden">
+
+<div class="overlay"></div>
+
+<div class="letter">
+
+<button id="closeModal">
+
+✕
+
+</button>
+
+<div id="modalBody">
+
 </div>
 
+</div>
+
+</div>
 
 <script src="app.js"></script>
 

@@ -19,27 +19,36 @@ const modalBody = document.getElementById("modalBody");
 const closeModal = document.getElementById("closeModal");
 
 continueBtn.addEventListener("click", () => {
+
     intro.classList.remove("active");
     passwordScreen.classList.add("active");
+
 });
 
 unlockBtn.addEventListener("click", unlock);
 
-passwordInput.addEventListener("keydown", e => {
-    if (e.key === "Enter") unlock();
+passwordInput.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Enter"){
+
+        unlock();
+
+    }
+
 });
 
 function unlock(){
 
-    if(passwordInput.value !== PASSWORD){
+    if(passwordInput.value!==PASSWORD){
 
-        passwordMessage.innerHTML =
+        passwordMessage.innerHTML=
 `Hmm...<br>
 That's not our key. ♡`;
 
         passwordInput.value="";
 
         return;
+
     }
 
     passwordMessage.textContent="Unlocking...";
@@ -49,7 +58,7 @@ That's not our key. ♡`;
         passwordScreen.classList.remove("active");
         home.classList.remove("hidden");
 
-    },800);
+    },700);
 
 }
 
@@ -65,41 +74,62 @@ function updateCounter(){
 
 }
 
-updateCounter();
+updateCounter();async function loadCards() {
 
-async function loadCards() {
+    try {
 
-    const response = await fetch("content/cards.json");
-    const cards = await response.json();
+        const response = await fetch("content/cards.json");
 
-    cardsContainer.innerHTML = "";
+        if (!response.ok) {
+            throw new Error("Unable to load cards.");
+        }
 
-    cards.forEach(card => {
+        const cards = await response.json();
 
-        const div = document.createElement("div");
+        cardsContainer.innerHTML = "";
 
-        div.className = "card";
+        cards.forEach(card => {
 
-        div.innerHTML = `
-            <h3>${card.title}</h3>
-            <p>${card.subtitle}</p>
+            const div = document.createElement("div");
+
+            div.className = "card";
+
+            div.innerHTML = `
+                <h3>${card.title}</h3>
+                <p>${card.subtitle}</p>
+            `;
+
+            div.addEventListener("click", () => {
+                openLetter(card);
+            });
+
+            cardsContainer.appendChild(div);
+
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        cardsContainer.innerHTML = `
+            <p style="text-align:center;">
+                Unable to load cards.
+            </p>
         `;
 
-        div.onclick = () => openLetter(card);
-
-        cardsContainer.appendChild(div);
-
-    });
+    }
 
 }
 
-loadCards();
-
-
-
-async function openLetter(card) {
+loadCards();async function openLetter(card) {
 
     modal.classList.remove("hidden");
+
+    modalBody.innerHTML = `
+        <div style="text-align:center;padding:60px;">
+            Loading...
+        </div>
+    `;
 
     try {
 
@@ -115,25 +145,32 @@ async function openLetter(card) {
 
     } catch (error) {
 
+        console.error(error);
+
         modalBody.innerHTML = `
             <h2>Oops! 💌</h2>
-            <p>I couldn't load this letter.</p>
-        `;
 
-        console.error(error);
+            <p style="margin-top:20px;">
+                I couldn't load this letter.
+            </p>
+
+            <p style="font-size:14px;color:#999;">
+                ${card.letter}
+            </p>
+        `;
 
     }
 
 }
 
-closeModal.onclick=()=>{
+closeModal.addEventListener("click", () => {
 
-modal.classList.add("hidden");
+    modal.classList.add("hidden");
 
-};
+});
 
-modal.querySelector(".overlay").onclick=()=>{
+modal.querySelector(".overlay").addEventListener("click", () => {
 
-modal.classList.add("hidden");
+    modal.classList.add("hidden");
 
-};
+});

@@ -1,12 +1,7 @@
-:root{
-    --bg:#F7F5F2;
-    --card:#ffffff;
-    --text:#2E2E2E;
-    --sub:#8C8C8C;
-    --shadow:0 12px 35px rgba(0,0,0,.08);
-    --radius:28px;
-    --accent:#E8DCCF;
-}
+/* =======================================================
+   Open When v2
+   Apple + MUJI
+======================================================= */
 
 *{
     margin:0;
@@ -14,201 +9,774 @@
     box-sizing:border-box;
 }
 
+:root{
+
+    --bg:#F7F5F2;
+    --card:#ffffff;
+
+    --text:#2d2d2d;
+    --sub:#7d7d7d;
+
+    --line:#ebe6e0;
+
+    --radius:28px;
+
+    --shadow:
+    0 10px 40px rgba(0,0,0,.06);
+
+    --speed:.35s;
+
+}
+
+@media(prefers-color-scheme:dark){
+
+:root{
+
+--bg:#181818;
+--card:#252525;
+
+--text:#ffffff;
+--sub:#c9c9c9;
+
+--line:#3a3a3a;
+
+}
+
+}
+
 html{
-    scroll-behavior:smooth;
+
+scroll-behavior:smooth;
+
 }
 
 body{
-    font-family:"Pretendard",sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    min-height:100vh;
-    overflow-x:hidden;
+
+background:var(--bg);
+
+font-family:
+Pretendard,
+-apple-system,
+BlinkMacSystemFont,
+sans-serif;
+
+color:var(--text);
+
+overflow-x:hidden;
+
+min-height:100vh;
+
 }
 
-button{
-    font-family:inherit;
-    cursor:pointer;
-    border:none;
-    outline:none;
-}
-
-.hidden{
-    display:none !important;
-}
+/* ===========================
+   Intro
+=========================== */
 
 .screen{
-    position:fixed;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:var(--bg);
-    transition:.6s;
-    z-index:100;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+
+padding:40px;
+
 }
 
-.screen:not(.active){
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
+.screen.active{
+
+display:flex;
+
+animation:fade .7s;
+
 }
 
-.intro-content{
-    width:min(90%,420px);
-    text-align:center;
-    animation:fadeUp .8s ease;
+.center{
+
+width:100%;
+max-width:430px;
+
+text-align:center;
+
 }
 
-.intro-content h1{
-    font-size:3rem;
-    font-weight:700;
-    margin-bottom:20px;
+.center h1{
+
+font-size:58px;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+letter-spacing:-2px;
+
 }
 
-.intro-content p{
-    color:var(--sub);
-    line-height:1.8;
-    margin-bottom:40px;
+.center h2{
+
+font-size:40px;
+
+margin-bottom:22px;
+
 }
 
-#continueBtn,
-#unlockBtn{
-    background:#222;
-    color:#fff;
-    padding:15px 34px;
-    border-radius:999px;
-    font-size:1rem;
-    transition:.3s;
+.center p{
+
+line-height:1.9;
+
+font-size:17px;
+
+color:var(--sub);
+
+margin-bottom:45px;
+
 }
 
-#continueBtn:hover,
-#unlockBtn:hover{
-    transform:translateY(-2px);
-    box-shadow:var(--shadow);
+/* ===========================
+Buttons
+=========================== */
+
+button{
+
+border:none;
+
+background:white;
+
+padding:16px 34px;
+
+border-radius:999px;
+
+font-size:16px;
+
+cursor:pointer;
+
+box-shadow:var(--shadow);
+
+transition:all var(--speed);
+
 }
 
-.password-box{
-    background:#fff;
-    width:min(92%,420px);
-    border-radius:var(--radius);
-    padding:45px;
-    text-align:center;
-    box-shadow:var(--shadow);
+button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,.08);
+
 }
 
-.password-box h2{
-    margin-bottom:12px;
+/* ===========================
+Password
+=========================== */
+
+input{
+
+width:100%;
+
+padding:18px;
+
+font-size:18px;
+
+border-radius:20px;
+
+border:1px solid var(--line);
+
+outline:none;
+
+margin:22px 0;
+
+background:white;
+
+text-align:center;
+
 }
 
 .hint{
-    color:var(--sub);
-    line-height:1.7;
-    margin-bottom:30px;
-}
 
-#passwordInput{
-    width:100%;
-    padding:16px;
-    border-radius:18px;
-    border:1px solid #ddd;
-    text-align:center;
-    font-size:1.2rem;
-    margin-bottom:22px;
+font-size:14px;
+
+color:var(--sub);
+
+margin-bottom:30px;
+
 }
 
 #passwordMessage{
-    margin-top:18px;
-    color:#b45a5a;
+
+margin-top:22px;
+
+line-height:1.8;
+
+font-size:15px;
+
+color:#cc6b6b;
+
+}/* ===========================
+Home
+=========================== */
+
+.hidden{
+
+display:none;
+
 }
 
 header{
-    text-align:center;
-    padding:70px 20px 30px;
+
+padding:70px 25px 40px;
+
+text-align:center;
+
 }
 
 header h1{
-    font-size:2.4rem;
+
+font-size:42px;
+
+margin-bottom:12px;
+
+letter-spacing:-1px;
+
 }
 
 #dayCounter{
-    margin-top:12px;
-    color:var(--sub);
+
+font-size:18px;
+
+color:var(--sub);
+
 }
 
+/* ===========================
+Cards
+=========================== */
+
 #cardsContainer{
-    width:min(1100px,92%);
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:26px;
-    padding-bottom:80px;
+
+width:min(1100px,92%);
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:28px;
+
+padding-bottom:80px;
+
 }
 
 .card{
-    background:var(--card);
-    border-radius:28px;
-    padding:30px;
-    box-shadow:var(--shadow);
-    transition:.35s;
-    cursor:pointer;
+
+background:var(--card);
+
+border-radius:var(--radius);
+
+padding:34px;
+
+cursor:pointer;
+
+position:relative;
+
+overflow:hidden;
+
+border:1px solid var(--line);
+
+box-shadow:var(--shadow);
+
+transition:
+
+transform .35s,
+
+box-shadow .35s,
+
+border .35s;
+
 }
 
 .card:hover{
-    transform:translateY(-8px) scale(1.02);
+
+transform:
+
+translateY(-10px)
+scale(1.02);
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.10);
+
 }
 
 .card h3{
-    margin-bottom:12px;
+
+font-size:28px;
+
+margin-bottom:15px;
+
 }
 
 .card p{
-    color:var(--sub);
+
+line-height:1.8;
+
+color:var(--sub);
+
+font-size:15px;
+
 }
 
-.modal{
-    position:fixed;
-    inset:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:300;
+/* envelope */
+
+.card::before{
+
+content:"✉";
+
+position:absolute;
+
+right:26px;
+
+bottom:20px;
+
+font-size:52px;
+
+opacity:.07;
+
+transition:.4s;
+
+}
+
+.card:hover::before{
+
+transform:
+
+rotate(-10deg)
+scale(1.2);
+
+opacity:.15;
+
+}
+
+/* ===========================
+Footer
+=========================== */
+
+footer{
+
+padding:70px 20px;
+
+text-align:center;
+
+color:var(--sub);
+
+font-size:15px;
+
+line-height:2;
+
+}/* ===========================
+Letter Modal
+=========================== */
+
+#letterModal{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999;
+
+animation:fade .35s;
+
+}
+
+#letterModal.hidden{
+
+display:none;
+
 }
 
 .overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.45);
-    backdrop-filter:blur(6px);
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.35);
+
+backdrop-filter:blur(4px);
+
 }
 
-.modal-content{
-    position:relative;
-    width:min(90%,760px);
-    max-height:88vh;
-    overflow:auto;
-    background:#fff;
-    border-radius:30px;
-    padding:45px;
-    z-index:2;
-    animation:fadeUp .35s ease;
+/* ===========================
+Letter Paper
+=========================== */
+
+.letter{
+
+position:relative;
+
+background:#fffdfb;
+
+width:min(760px,92vw);
+
+max-height:88vh;
+
+overflow:auto;
+
+border-radius:30px;
+
+padding:55px;
+
+box-shadow:
+
+0 35px 80px rgba(0,0,0,.18);
+
+animation:letterUp .45s ease;
+
+z-index:2;
+
 }
+
+/* Scroll */
+
+.letter::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.letter::-webkit-scrollbar-thumb{
+
+background:#d8d2ca;
+
+border-radius:999px;
+
+}
+
+/* Close */
 
 #closeModal{
-    position:absolute;
-    top:20px;
-    right:22px;
-    background:none;
-    font-size:2rem;
+
+position:absolute;
+
+right:22px;
+
+top:22px;
+
+width:42px;
+
+height:42px;
+
+border-radius:999px;
+
+padding:0;
+
+font-size:18px;
+
+background:white;
+
 }
 
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+/* ===========================
+Letter Content
+=========================== */
+
+#modalBody{
+
+margin-top:10px;
+
+}
+
+#modalBody h1,
+#modalBody h2{
+
+font-size:36px;
+
+margin-bottom:30px;
+
+letter-spacing:-1px;
+
+}
+
+#modalBody p{
+
+font-size:17px;
+
+line-height:2.1;
+
+margin-bottom:22px;
+
+color:#444;
+
+}
+
+#modalBody strong{
+
+font-weight:700;
+
+}
+
+#modalBody img{
+
+width:100%;
+
+margin:30px 0;
+
+border-radius:22px;
+
+display:block;
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.08);
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+#modalBody img:hover{
+
+transform:scale(1.02);
+
+}
+
+#modalBody video{
+
+width:100%;
+
+margin:28px 0;
+
+border-radius:22px;
+
+}
+
+#modalBody audio{
+
+width:100%;
+
+margin:28px 0;
+
+}/* ===========================
+Animations
+=========================== */
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+@keyframes letterUp{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(40px)
+scale(.96);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+scale(1);
+
+}
+
+}
+
+@keyframes cardAppear{
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0);
+
+}
+
+}
+
+.card{
+
+animation:
+
+cardAppear .6s ease both;
+
+}
+
+.card:nth-child(1){animation-delay:.05s;}
+.card:nth-child(2){animation-delay:.10s;}
+.card:nth-child(3){animation-delay:.15s;}
+.card:nth-child(4){animation-delay:.20s;}
+.card:nth-child(5){animation-delay:.25s;}
+.card:nth-child(6){animation-delay:.30s;}
+
+/* ===========================
+Hover Glow
+=========================== */
+
+.card:hover{
+
+border-color:#d9cdbf;
+
+}
+
+/* ===========================
+Selection
+=========================== */
+
+::selection{
+
+background:#efe5d8;
+
+color:#333;
+
+}
+
+/* ===========================
+Responsive
+=========================== */
+
+@media(max-width:900px){
+
+header{
+
+padding-top:45px;
+
+}
+
+header h1{
+
+font-size:34px;
+
+}
+
+.center h1{
+
+font-size:46px;
+
+}
+
+.card{
+
+padding:26px;
+
+}
+
+.card h3{
+
+font-size:24px;
+
+}
+
+.letter{
+
+padding:35px 26px;
+
+}
+
+#modalBody h1,
+#modalBody h2{
+
+font-size:28px;
+
+}
+
+#modalBody p{
+
+font-size:16px;
+
+line-height:1.9;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.center{
+
+max-width:100%;
+
+}
+
+.center h1{
+
+font-size:40px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+input{
+
+font-size:16px;
+
+}
+
+.card{
+
+padding:22px;
+
+}
+
+header h1{
+
+font-size:30px;
+
+}
+
+#dayCounter{
+
+font-size:16px;
+
+}
+
 }
