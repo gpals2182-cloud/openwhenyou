@@ -1,0 +1,44 @@
+[
+  {
+    "id": "miss",
+    "title": "♡ I Miss You",
+    "subtitle": "When you miss me.",
+    "file": "miss.json",
+    "emoji": "♡"
+  },
+  {
+    "id": "badday",
+    "title": "☁ I Had a Bad Day",
+    "subtitle": "When today feels a little too heavy.",
+    "file": "badday.json",
+    "emoji": "☁"
+  },
+  {
+    "id": "sleep",
+    "title": "🌙 I Can't Sleep",
+    "subtitle": "For sleepless nights.",
+    "file": "sleep.json",
+    "emoji": "🌙"
+  },
+  {
+    "id": "korea",
+    "title": "🇰🇷 I Miss Korea",
+    "subtitle": "Whenever you're homesick.",
+    "file": "korea.json",
+    "emoji": "🇰🇷"
+  },
+  {
+    "id": "memories",
+    "title": "📷 Remember Us",
+    "subtitle": "Our memories together.",
+    "file": "memories.json",
+    "emoji": "📷"
+  },
+  {
+    "id": "reunion",
+    "title": "✈ Until We Meet Again",
+    "subtitle": "Until I can hold you again.",
+    "file": "reunion.json",
+    "emoji": "✈"
+  }
+]

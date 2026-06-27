@@ -67,73 +67,107 @@ function updateCounter(){
 
 updateCounter();
 
-const cards=[
+async function loadCards() {
 
-{
-title:"♡ I Miss You",
-subtitle:"When you miss me."
-},
+    const response = await fetch("content/cards.json");
+    const cards = await response.json();
 
-{
-title:"☁ I Had a Bad Day",
-subtitle:"When today feels a little too heavy."
-},
+    cardsContainer.innerHTML = "";
 
-{
-title:"🌙 I Can't Sleep",
-subtitle:"For sleepless nights."
-},
+    cards.forEach(card => {
 
-{
-title:"🇰🇷 I Miss Korea",
-subtitle:"Whenever you're homesick."
-},
+        const div = document.createElement("div");
 
-{
-title:"📷 Remember Us",
-subtitle:"Our memories together."
-},
+        div.className = "card";
 
-{
-title:"✈ Until We Meet Again",
-subtitle:"Until I can hold you again."
+        div.innerHTML = `
+            <h3>${card.title}</h3>
+            <p>${card.subtitle}</p>
+        `;
+
+        div.onclick = () => openLetter(card);
+
+        cardsContainer.appendChild(div);
+
+    });
+
 }
 
-];
+loadCards();
 
-cards.forEach(card=>{
 
-const div=document.createElement("div");
 
-div.className="card";
+async function openLetter(card){
 
-div.innerHTML=`
-<h3>${card.title}</h3>
-<p>${card.subtitle}</p>
-`;
+    modal.classList.remove("hidden");
 
-div.onclick=()=>openLetter(card);
+    try{
 
-cardsContainer.appendChild(div);
+        const response = await fetch(`content/${card.file}`);
+        const data = await response.json();
 
-});
+        let html = `
+            <h2>${data.title}</h2>
 
-function openLetter(card){
+            <p style="margin-top:25px;line-height:2;">
+                ${data.letter}
+            </p>
+        `;
 
-modal.classList.remove("hidden");
+        if(data.photos){
 
-modalBody.innerHTML=`
+            data.photos.forEach(photo=>{
 
-<h2>${card.title}</h2>
+                html += `
+                    <img
+                        src="${photo}"
+                        style="width:100%;border-radius:18px;margin-top:20px;">
+                `;
 
-<p style="margin-top:25px;line-height:2">
+            });
 
-This letter will automatically load
-from JSON in the next version.
+        }
 
-</p>
+        if(data.videos){
 
-`;
+            data.videos.forEach(video=>{
+
+                html += `
+                    <video controls style="width:100%;margin-top:20px;">
+                        <source src="${video}">
+                    </video>
+                `;
+
+            });
+
+        }
+
+        if(data.audio){
+
+            data.audio.forEach(audio=>{
+
+                html += `
+                    <audio controls style="width:100%;margin-top:20px;">
+                        <source src="${audio}">
+                    </audio>
+                `;
+
+            });
+
+        }
+
+        modalBody.innerHTML = html;
+
+    }catch(error){
+
+        modalBody.innerHTML = `
+            <h2>Error</h2>
+            <p>Unable to load this letter.</p>
+        `;
+
+        console.error(error);
+
+    }
 
 }
 
