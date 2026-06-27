@@ -155,7 +155,7 @@ async function openLetter(card){
             });
 
         }
-
+html = html.replace(/\n/g, "<br>");
         modalBody.innerHTML = html;
 
     }catch(error){
