@@ -103,66 +103,17 @@ async function openLetter(card){
 
     try{
 
-        const response = await fetch(`content/${card.file}`);
-        const data = await response.json();
+        const response = await fetch(card.letter);
 
-        let html = `
-            <h2>${data.title}</h2>
+        const html = await response.text();
 
-            <p style="margin-top:25px;line-height:2;">
-                ${data.letter}
-            </p>
-        `;
-
-        if(data.photos){
-
-            data.photos.forEach(photo=>{
-
-                html += `
-                    <img
-                        src="${photo}"
-                        style="width:100%;border-radius:18px;margin-top:20px;">
-                `;
-
-            });
-
-        }
-
-        if(data.videos){
-
-            data.videos.forEach(video=>{
-
-                html += `
-                    <video controls style="width:100%;margin-top:20px;">
-                        <source src="${video}">
-                    </video>
-                `;
-
-            });
-
-        }
-
-        if(data.audio){
-
-            data.audio.forEach(audio=>{
-
-                html += `
-                    <audio controls style="width:100%;margin-top:20px;">
-                        <source src="${audio}">
-                    </audio>
-                `;
-
-            });
-
-        }
-html = html.replace(/\n/g, "<br>");
         modalBody.innerHTML = html;
 
     }catch(error){
 
         modalBody.innerHTML = `
-            <h2>Error</h2>
-            <p>Unable to load this letter.</p>
+            <h2>Oops!</h2>
+            <p>I couldn't load this letter.</p>
         `;
 
         console.error(error);
