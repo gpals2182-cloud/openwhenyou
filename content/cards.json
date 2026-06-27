@@ -3,42 +3,42 @@
     "id": "miss",
     "title": "♡ I Miss You",
     "subtitle": "When you miss me.",
-    "file": "miss.json",
+    "letter": "letters/miss.html",
     "emoji": "♡"
   },
   {
     "id": "badday",
     "title": "☁ I Had a Bad Day",
     "subtitle": "When today feels a little too heavy.",
-    "file": "badday.json",
+    "letter": "letters/badday.html",
     "emoji": "☁"
   },
   {
     "id": "sleep",
     "title": "🌙 I Can't Sleep",
     "subtitle": "For sleepless nights.",
-    "file": "sleep.json",
+    "letter": "letters/sleep.html",
     "emoji": "🌙"
   },
   {
     "id": "korea",
     "title": "🇰🇷 I Miss Korea",
     "subtitle": "Whenever you're homesick.",
-    "file": "korea.json",
+    "letter": "letters/korea.html",
     "emoji": "🇰🇷"
   },
   {
     "id": "memories",
     "title": "📷 Remember Us",
     "subtitle": "Our memories together.",
-    "file": "memories.json",
+    "letter": "letters/memories.html",
     "emoji": "📷"
   },
   {
     "id": "reunion",
     "title": "✈ Until We Meet Again",
     "subtitle": "Until I can hold you again.",
-    "file": "reunion.json",
+    "letter": "letters/reunion.html",
     "emoji": "✈"
   }
 ]
