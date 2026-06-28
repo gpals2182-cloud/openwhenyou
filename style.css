@@ -816,3 +816,102 @@ box-shadow:
 0 10px 25px rgba(29,185,84,.3);
 
 }
+/* ===========================
+Music Card
+=========================== */
+
+.music-card{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+padding:25px;
+
+margin-top:25px;
+
+border-radius:24px;
+
+background:#f8f8f8;
+
+border:1px solid #ececec;
+
+}
+
+.music-cover{
+
+width:90px;
+
+height:90px;
+
+border-radius:20px;
+
+background:#1DB954;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:40px;
+
+color:white;
+
+flex-shrink:0;
+
+}
+
+.music-info{
+
+flex:1;
+
+}
+
+.music-info h4{
+
+font-size:22px;
+
+margin-bottom:10px;
+
+}
+
+.music-info p{
+
+margin-bottom:18px;
+
+color:#777;
+
+line-height:1.8;
+
+}
+
+.spotify-btn{
+
+display:inline-block;
+
+padding:12px 22px;
+
+border-radius:999px;
+
+background:#1DB954;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.spotify-btn:hover{
+
+transform:translateY(-2px);
+
+background:#159446;
+
+}
