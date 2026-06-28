@@ -173,4 +173,18 @@ modal.querySelector(".overlay").addEventListener("click", () => {
 
     modal.classList.add("hidden");
 
-});
+});function toggleSection(id){
+
+const section=document.getElementById(id);
+
+if(section.style.display==="block"){
+
+section.style.display="none";
+
+}else{
+
+section.style.display="block";
+
+}
+
+}
