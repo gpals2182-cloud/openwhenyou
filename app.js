@@ -74,7 +74,9 @@ function updateCounter(){
 
 }
 
-updateCounter();async function loadCards() {
+updateCounter();
+
+async function loadCards() {
 
     try {
 
