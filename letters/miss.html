@@ -28,8 +28,12 @@
 <hr>
 
 <hr>
+<button
+class="gift-btn"
+data-open="📷 Open Our Photos"
+data-close="📷 Hide Our Photos"
+onclick="toggleSection('photos', this)">
 
-<button class="gift-btn" onclick="toggleSection('photos')">
 
 📷 Open Our Photos
 
@@ -49,7 +53,17 @@
 
 </div>
 
-<h3>🎵 Our Song</h3>
+<hr>
+
+<button class="gift-btn" onclick="toggleSection('music')">
+
+🎵 Open Our Song
+
+<button
+class="gift-btn"
+data-open="🎵 Open Our Song"
+data-close="🎵 Hide Our Song"
+onclick="toggleSection('music', this)">
 
 <div class="music-card">
 
@@ -62,26 +76,38 @@
         <h4>Just the Two of Us</h4>
 
         <p>
-            Whenever you miss me, press play and think of us. 🤍
+            Whenever you miss me,
+            press play and think of us. 🤍
         </p>
 
         <a
-            href="https://open.spotify.com/search/Just%20the%20Two%20of%20Us"
-            target="_blank"
-            class="spotify-btn">
+        href="https://open.spotify.com/search/Just%20the%20Two%20of%20Us"
+        target="_blank"
+        class="spotify-btn">
 
-            ▶ Listen on Spotify
+        ▶ Listen on Spotify
 
         </a>
 
     </div>
 
 </div>
-<hr>
+
+</div>
 
 <hr>
 
-<h3>🎥 Our Video</h3>
+<hr>
+
+<button class="gift-btn" onclick="toggleSection('video')">
+
+🎥 Open Our Video
+
+<button
+class="gift-btn"
+data-open="🎥 Open Our Video"
+data-close="🎥 Hide Our Video"
+onclick="toggleSection('video', this)">
 
 <p>
 Sometimes a few seconds can hold a whole memory. 🤍
@@ -89,12 +115,11 @@ Sometimes a few seconds can hold a whole memory. 🤍
 
 <video controls class="memory-video">
 
-    <source src="../assets/videos/miss.mp4" type="video/mp4">
+<source src="../assets/videos/miss.mp4" type="video/mp4">
 
 </video>
-<hr>
 
-<div class="one-more">
+</div>
 
 <h3>🤍 One More Thing...</h3>
 
@@ -108,5 +133,41 @@ there's one last little gift waiting for you.
 ▶ Play My Voice
 
 </a>
+
+</div><hr>
+
+<button class="gift-btn" onclick="toggleSection('voice')">
+
+🤍 One More Thing...
+
+<<button
+class="gift-btn"
+data-open="🤍 One More Thing..."
+data-close="🤍 Hide"
+onclick="toggleSection('voice', this)">
+
+<h3>A Little Message For You 🤍</h3>
+
+<p>
+
+If you're still here...
+
+thank you for reading everything.
+
+I hope this little website makes you smile whenever you miss me.
+
+No matter how far apart we are,
+
+you're always in my heart.
+
+I love you.
+
+</p>
+
+<audio controls style="width:100%;margin-top:20px;">
+
+<source src="../assets/audio/miss.mp3" type="audio/mpeg">
+
+</audio>
 
 </div>
