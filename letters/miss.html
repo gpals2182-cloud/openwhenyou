@@ -115,6 +115,8 @@ onclick="toggleSection('voice', this)">
 
 <hr>
 
+<hr>
+
 <button
 class="gift-btn"
 data-open="🤍 One More Thing..."
@@ -127,51 +129,30 @@ onclick="toggleSection('game', this)">
 
 <div id="game" class="gift-section">
 
-<h3>🤍 Would You Rather?</h3>
+<h3 style="text-align:center;">
+🤍 Would You Rather?
+</h3>
 
-<p style="text-align:center;">
-Let's see what you'd choose...
-❤️
+<p id="question" style="text-align:center;margin-bottom:30px;">
+Which would you choose?
 </p>
 
-<div class="choice-box">
+<div class="choice-area">
 
-<button class="choice-btn" onclick="choose(this)">
-🤗 One huge hug from me right now
-</button>
+<button id="choice1" class="choice-btn"></button>
 
-<button class="choice-btn" onclick="choose(this)">
-📸 100 selfies from me
-</button>
+<button id="choice2" class="choice-btn"></button>
 
 </div>
 
-<div class="choice-box">
+<p id="finishMessage" style="display:none;text-align:center;margin-top:35px;">
 
-<button class="choice-btn" onclick="choose(this)">
-🤝 Hold my hand for a whole day
-</button>
+Thank you for playing. ❤️
 
-<button class="choice-btn" onclick="choose(this)">
-🫂 Cuddle with me all night
-</button>
+<br><br>
 
-</div>
+Now send me your answers later. 😉
 
-<div class="choice-box">
-
-<button class="choice-btn" onclick="choose(this)">
-📅 Spend one week together now
-</button>
-
-<button class="choice-btn" onclick="choose(this)">
-💍 Wait one year but never be apart again
-</button>
-
-</div>
-
-<p style="text-align:center;margin-top:25px;">
-Now send me your answers later. 😘
 </p>
 
 </div>

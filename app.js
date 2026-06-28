@@ -204,3 +204,70 @@ function toggleSection(id, button) {
     }
 
 }
+const missQuestions = [
+
+{
+question:"If you could choose one...",
+a:"🤗 One huge hug from me right now",
+b:"📸 100 selfies from me"
+},
+
+{
+question:"Which sounds better?",
+a:"🤝 Hold my hand for a whole day",
+b:"🫂 Cuddle with me all night"
+},
+
+{
+question:"One last question...",
+a:"📅 Spend one week together now",
+b:"💍 Wait one year but never be apart again"
+}
+
+];
+
+let currentQuestion = 0;
+
+function loadQuestion(){
+
+    const q = missQuestions[currentQuestion];
+
+    document.getElementById("question").textContent=q.question;
+
+    document.getElementById("choice1").textContent=q.a;
+
+    document.getElementById("choice2").textContent=q.b;
+
+}
+
+function nextQuestion(){
+
+    currentQuestion++;
+
+    if(currentQuestion>=missQuestions.length){
+
+        document.querySelector(".choice-area").style.display="none";
+
+        document.getElementById("question").style.display="none";
+
+        document.getElementById("finishMessage").style.display="block";
+
+        return;
+
+    }
+
+    loadQuestion();
+
+}
+
+document.addEventListener("click",(e)=>{
+
+if(e.target.id==="choice1"||e.target.id==="choice2"){
+
+nextQuestion();
+
+}
+
+});
+
+loadQuestion();
