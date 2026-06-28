@@ -122,36 +122,42 @@ onclick="toggleSection('voice', this)">
 
 🤍 One More Thing...
 
+<hr>
+
+<button
+class="gift-btn"
+data-open="🤍 One More Thing..."
+data-close="🤍 Hide"
+onclick="toggleSection('game', this); loadKoreaQuestion();">
+
+🤍 One More Thing...
+
 </button>
 
-<div id="voice" class="gift-section">
+<div id="game" class="gift-section">
 
-<h3>A Little Message 🤍</h3>
+<h3 style="text-align:center;">
+🇰🇷 Would You Rather?
+</h3>
 
-<p>
-
-Whenever you miss Korea...
-
-Remember this.
-
-You're not just missing a country.
-
-You're missing a chapter of our story.
-
-And one day,
-
-we'll write the next chapter together.
-
-I promise.
-
+<p id="koreaQuestion" style="text-align:center;margin-bottom:30px;">
+Let's go back to our memories...
 </p>
 
-<audio controls style="width:100%;margin-top:20px;">
+<div class="choice-area">
 
-<source src="../assets/audio/korea.mp3" type="audio/mpeg">
+<button id="koreaChoice1" class="choice-btn"></button>
 
-Your browser does not support audio.
+<button id="koreaChoice2" class="choice-btn"></button>
 
-</audio>
+</div>
+
+<p id="koreaFinish" style="display:none;text-align:center;margin-top:35px;">
+
+I can't wait to make even more memories with you.
+
+🤍🇰🇷
+
+</p>
 
 </div>

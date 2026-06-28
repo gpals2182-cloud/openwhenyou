@@ -121,38 +121,44 @@ onclick="toggleSection('voice', this)">
 
 🤍 One More Thing...
 
+<hr>
+
+<button
+class="gift-btn"
+data-open="🤍 One More Thing..."
+data-close="🤍 Hide"
+onclick="toggleSection('game', this); loadSleepQuestion();">
+
+🤍 One More Thing...
+
 </button>
 
-<div id="voice" class="gift-section">
+<div id="game" class="gift-section">
 
-<h3>Good Night 🤍</h3>
+<h3 style="text-align:center;">
+🌙 Would You Rather?
+</h3>
 
-<p>
-
-Before you sleep...
-
-I just want you to remember one thing.
-
-You are loved.
-
-You are enough.
-
-And no matter how far apart we are,
-
-I'll be thinking of you.
-
-Sleep well, my love.
-
-I'll see you in your dreams.
-
+<p id="sleepQuestion" style="text-align:center;margin-bottom:30px;">
+Which would help you sleep better?
 </p>
 
-<audio controls style="width:100%;margin-top:20px;">
+<div class="choice-area">
 
-<source src="../assets/audio/sleep.mp3" type="audio/mpeg">
+<button id="sleepChoice1" class="choice-btn"></button>
 
-Your browser does not support audio.
+<button id="sleepChoice2" class="choice-btn"></button>
 
-</audio>
+</div>
+
+<p id="sleepFinish" style="display:none;text-align:center;margin-top:35px;">
+
+Good night, my love. 🌙
+
+<br><br>
+
+Sweet dreams... ❤️
+
+</p>
 
 </div>

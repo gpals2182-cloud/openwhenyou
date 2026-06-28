@@ -119,38 +119,44 @@ onclick="toggleSection('voice', this)">
 
 🤍 One More Thing...
 
+<hr>
+
+<button
+class="gift-btn"
+data-open="🤍 One More Thing..."
+data-close="🤍 Hide"
+onclick="toggleSection('game', this); loadBadDayQuestion();">
+
+🤍 One More Thing...
+
 </button>
 
-<div id="voice" class="gift-section">
+<div id="game" class="gift-section">
 
-<h3>A Little Message For You 🤍</h3>
+<h3 style="text-align:center;">
+☁ Would You Rather?
+</h3>
 
-<p>
-
-I know some days feel heavier than others.
-
-But no matter how difficult today was,
-I'm always on your side.
-
-Even if we're thousands of kilometers apart,
-you'll never face anything alone.
-
-Take a deep breath.
-Get some rest.
-
-Tomorrow is a new day,
-and I'll still be here cheering for you.
-
-I love you.
-
+<p id="baddayQuestion" style="text-align:center;margin-bottom:30px;">
+Which would make your day better?
 </p>
 
-<audio controls style="width:100%;margin-top:20px;">
+<div class="choice-area">
 
-<source src="../assets/audio/badday.mp3" type="audio/mpeg">
+<button id="baddayChoice1" class="choice-btn"></button>
 
-Your browser does not support audio.
+<button id="baddayChoice2" class="choice-btn"></button>
 
-</audio>
+</div>
+
+<p id="baddayFinish" style="display:none;text-align:center;margin-top:35px;">
+
+I hope tomorrow is kinder to you. 🤍
+
+<br><br>
+
+Now tell me what you picked. ❤️
+
+</p>
 
 </div>
