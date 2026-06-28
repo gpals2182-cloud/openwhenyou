@@ -1034,3 +1034,30 @@ margin-top:20px;
 animation:fade .4s;
 
 }
+.future-list{
+
+margin:35px 0;
+
+padding:30px;
+
+background:#faf8f5;
+
+border-radius:24px;
+
+}
+
+.future-list p{
+
+padding:14px 0;
+
+font-size:18px;
+
+border-bottom:1px solid #ece7e1;
+
+}
+
+.future-list p:last-child{
+
+border-bottom:none;
+
+}
