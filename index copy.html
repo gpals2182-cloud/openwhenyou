@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open When</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Intro -->
+
+<section id="intro" class="screen active">
+
+    <div class="center">
+
+        <h1>Open When</h1>
+
+        <p>
+            Made with love,<br>
+            for Wyatt.
+        </p>
+
+        <button id="continueBtn">
+            Tap to Continue
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Password -->
+
+<section id="passwordScreen" class="screen">
+
+    <div class="center">
+
+        <h2>Password</h2>
+
+        <input
+    id="passwordInput"
+    type="password"
+    maxlength="4"
+    placeholder="••••">
+        <p class="hint">
+            The year and month we met.
+        </p>
+
+        <button id="unlockBtn">
+            Unlock
+        </button>
+
+        <p id="passwordMessage"></p>
+
+    </div>
+
+</section>
+
+<!-- Home -->
+
+<section id="home" class="hidden">
+
+<header>
+
+<h1>Open When</h1>
+
+<p id="dayCounter"></p>
+
+</header>
+
+<main id="cardsContainer">
+
+</main>
+
+<footer>
+
+Made with love,<br>
+just for you.
+
+</footer>
+
+</section>
+
+<!-- Letter -->
+
+<div id="letterModal" class="hidden">
+
+<div class="overlay"></div>
+
+<div class="letter">
+
+<button id="closeModal">
+
+✕
+
+</button>
+
+<div id="modalBody">
+
+</div>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
