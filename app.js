@@ -173,21 +173,31 @@ modal.querySelector(".overlay").addEventListener("click", () => {
 
     modal.classList.add("hidden");
 
+});
+
 function toggleSection(id, button) {
 
     const section = document.getElementById(id);
 
-    if (section.style.display === "block") {
+    if (!section) return;
+
+    const isOpen = section.style.display === "block";
+
+    if (isOpen) {
 
         section.style.display = "none";
 
-        button.textContent = button.dataset.open;
+        if (button) {
+            button.textContent = button.dataset.open;
+        }
 
     } else {
 
         section.style.display = "block";
 
-        button.textContent = button.dataset.close;
+        if (button) {
+            button.textContent = button.dataset.close;
+        }
 
     }
 
