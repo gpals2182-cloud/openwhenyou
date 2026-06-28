@@ -113,51 +113,54 @@ class="spotify-btn">
 
 <hr>
 
-<button
-class="gift-btn"
-data-open="🤍 One More Thing..."
-data-close="🤍 Hide"
-onclick="toggleSection('voice', this)">
-
-🤍 One More Thing...
-
 <hr>
 
 <button
 class="gift-btn"
 data-open="🤍 One More Thing..."
 data-close="🤍 Hide"
-onclick="toggleSection('game', this); loadSleepQuestion();">
+onclick="toggleSection('sleepGame', this); startGame(sleepQuestions,'sleep');">
 
 🤍 One More Thing...
 
 </button>
 
-<div id="game" class="gift-section">
+<div id="sleepGame" class="gift-section">
 
 <h3 style="text-align:center;">
 🌙 Would You Rather?
 </h3>
 
-<p id="sleepQuestion" style="text-align:center;margin-bottom:30px;">
-Which would help you sleep better?
+<p
+id="sleepQuestion"
+style="text-align:center;margin-bottom:30px;">
 </p>
 
 <div class="choice-area">
 
-<button id="sleepChoice1" class="choice-btn"></button>
+<button
+id="sleepChoice1"
+class="choice-btn"
+onclick="chooseAnswer('sleep')">
+</button>
 
-<button id="sleepChoice2" class="choice-btn"></button>
+<button
+id="sleepChoice2"
+class="choice-btn"
+onclick="chooseAnswer('sleep')">
+</button>
 
 </div>
 
-<p id="sleepFinish" style="display:none;text-align:center;margin-top:35px;">
+<p
+id="sleepFinish"
+style="display:none;text-align:center;margin-top:35px;">
 
-Good night, my love. 🌙
+🌙 Sweet dreams, my love.
 
 <br><br>
 
-Sweet dreams... ❤️
+Now tell me your answers tomorrow. ❤️
 
 </p>
 

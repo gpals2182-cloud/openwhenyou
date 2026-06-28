@@ -204,6 +204,59 @@ function toggleSection(id, button) {
     }
 
 }
+
+
+}
+
+let currentQuestions = [];
+let currentIndex = 0;
+
+function startGame(questions, prefix) {
+
+    currentQuestions = questions;
+    currentIndex = 0;
+
+    document.getElementById(prefix + "Question").style.display = "block";
+    document.getElementById(prefix + "Finish").style.display = "none";
+
+    document.querySelector("#" + prefix + "Game .choice-area").style.display = "flex";
+
+    showQuestion(prefix);
+
+}
+
+function showQuestion(prefix) {
+
+    const q = currentQuestions[currentIndex];
+
+    document.getElementById(prefix + "Question").textContent = q.question;
+
+    document.getElementById(prefix + "Choice1").textContent = q.a;
+
+    document.getElementById(prefix + "Choice2").textContent = q.b;
+
+}
+
+function chooseAnswer(prefix) {
+
+    currentIndex++;
+
+    if (currentIndex >= currentQuestions.length) {
+
+        document.querySelector("#" + prefix + "Game .choice-area").style.display = "none";
+
+        document.getElementById(prefix + "Question").style.display = "none";
+
+        document.getElementById(prefix + "Finish").style.display = "block";
+
+        return;
+
+    }
+
+    showQuestion(prefix);
+
+}
+
 const missQuestions = [
 
 {
@@ -225,63 +278,17 @@ b:"💍 Wait one year but never be apart again"
 }
 
 ];
-
-let currentQuestion = 0;
-
-function loadQuestion(){
-
-    const q = missQuestions[currentQuestion];
-
-    document.getElementById("question").textContent=q.question;
-
-    document.getElementById("choice1").textContent=q.a;
-
-    document.getElementById("choice2").textContent=q.b;
-
-}
-
-function nextQuestion(){
-
-    currentQuestion++;
-
-    if(currentQuestion>=missQuestions.length){
-
-        document.querySelector(".choice-area").style.display="none";
-
-        document.getElementById("question").style.display="none";
-
-        document.getElementById("finishMessage").style.display="block";
-
-        return;
-
-    }
-
-    loadQuestion();
-
-}
-
-document.addEventListener("click",(e)=>{
-
-if(e.target.id==="choice1"||e.target.id==="choice2"){
-
-nextQuestion();
-
-}
-
-});
-
-loadQuestion();
 const badDayQuestions = [
 
 {
-question:"Which would make you feel better?",
+question:"What would make you feel better right now?",
 a:"🤗 A long hug from me",
 b:"🍜 Your favorite meal together"
 },
 
 {
 question:"After a hard day...",
-a:"🎬 Watch a movie with me",
+a:"🎬 Watch a movie together",
 b:"🚶 Take a quiet walk together"
 },
 
@@ -292,192 +299,45 @@ b:"❤️ Someone to hold you"
 }
 
 ];
-
-let badDayIndex = 0;
-
-function loadBadDayQuestion(){
-
-    badDayIndex = 0;
-
-    document.querySelector("#game .choice-area").style.display="flex";
-    document.getElementById("baddayQuestion").style.display="block";
-    document.getElementById("baddayFinish").style.display="none";
-
-    showBadDayQuestion();
-
-}
-
-function showBadDayQuestion(){
-
-    const q = badDayQuestions[badDayIndex];
-
-    document.getElementById("baddayQuestion").textContent=q.question;
-
-    document.getElementById("baddayChoice1").textContent=q.a;
-
-    document.getElementById("baddayChoice2").textContent=q.b;
-
-}
-
-document.getElementById("baddayChoice1").onclick=nextBadDay;
-document.getElementById("baddayChoice2").onclick=nextBadDay;
-
-function nextBadDay(){
-
-    badDayIndex++;
-
-    if(badDayIndex>=badDayQuestions.length){
-
-        document.querySelector("#game .choice-area").style.display="none";
-
-        document.getElementById("baddayQuestion").style.display="none";
-
-        document.getElementById("baddayFinish").style.display="block";
-
-        return;
-
-    }
-
-    showBadDayQuestion();
-
-}
 const sleepQuestions = [
 
 {
-question:"Tonight...",
-a:"🫂 Fall asleep in my arms",
-b:"📞 Fall asleep on a video call"
+question:"How would you rather fall asleep?",
+a:"🫂 In my arms",
+b:"📞 On a video call with me"
 },
 
 {
-question:"If I were with you...",
-a:"🤍 Play with your hair until you fall asleep",
-b:"💆 Give you a long back massage"
+question:"If I were there tonight...",
+a:"🤍 I'd play with your hair",
+b:"💆 I'd give you a relaxing massage"
 },
 
 {
-question:"Sweet dreams would be...",
+question:"Which sounds like the sweetest dream?",
 a:"🌙 Dream about our future together",
-b:"✈️ Wake up and find me beside you"
+b:"☀️ Wake up and find me beside you"
 }
 
 ];
-
-let sleepIndex = 0;
-
-function loadSleepQuestion(){
-
-    sleepIndex = 0;
-
-    document.querySelector("#game .choice-area").style.display="flex";
-    document.getElementById("sleepQuestion").style.display="block";
-    document.getElementById("sleepFinish").style.display="none";
-
-    showSleepQuestion();
-
-}
-
-function showSleepQuestion(){
-
-    const q = sleepQuestions[sleepIndex];
-
-    document.getElementById("sleepQuestion").textContent=q.question;
-
-    document.getElementById("sleepChoice1").textContent=q.a;
-
-    document.getElementById("sleepChoice2").textContent=q.b;
-
-}
-
-document.getElementById("sleepChoice1").onclick=nextSleep;
-document.getElementById("sleepChoice2").onclick=nextSleep;
-
-function nextSleep(){
-
-    sleepIndex++;
-
-    if(sleepIndex>=sleepQuestions.length){
-
-        document.querySelector("#game .choice-area").style.display="none";
-
-        document.getElementById("sleepQuestion").style.display="none";
-
-        document.getElementById("sleepFinish").style.display="block";
-
-        return;
-
-    }
-
-    showSleepQuestion();
-
-}
 const koreaQuestions = [
 
 {
-question:"Where should we go first when we visit Korea again?",
-a:"🌸 Cherry blossoms",
-b:"❄️ First snowfall"
+question:"When we go back to Korea, what should we do first?",
+a:"🌸 See the cherry blossoms again",
+b:"❄️ Watch another first snowfall together"
 },
 
 {
-question:"Which date would you choose?",
+question:"Which date sounds better?",
 a:"☕ Café hopping all day",
 b:"🏛️ Visit another museum together"
 },
 
 {
-question:"What's the best part of Korea?",
-a:"🍜 The food",
-b:"❤️ Being there together"
+question:"What made Korea so special?",
+a:"🍜 The amazing food",
+b:"❤️ Being there with you"
 }
 
 ];
-
-let koreaIndex = 0;
-
-function loadKoreaQuestion(){
-
-    koreaIndex=0;
-
-    document.querySelector("#game .choice-area").style.display="flex";
-    document.getElementById("koreaQuestion").style.display="block";
-    document.getElementById("koreaFinish").style.display="none";
-
-    showKoreaQuestion();
-
-}
-
-function showKoreaQuestion(){
-
-    const q=koreaQuestions[koreaIndex];
-
-    document.getElementById("koreaQuestion").textContent=q.question;
-
-    document.getElementById("koreaChoice1").textContent=q.a;
-
-    document.getElementById("koreaChoice2").textContent=q.b;
-
-}
-
-document.getElementById("koreaChoice1").onclick=nextKorea;
-document.getElementById("koreaChoice2").onclick=nextKorea;
-
-function nextKorea(){
-
-    koreaIndex++;
-
-    if(koreaIndex>=koreaQuestions.length){
-
-        document.querySelector("#game .choice-area").style.display="none";
-
-        document.getElementById("koreaQuestion").style.display="none";
-
-        document.getElementById("koreaFinish").style.display="block";
-
-        return;
-
-    }
-
-    showKoreaQuestion();
-
-}
