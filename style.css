@@ -914,4 +914,33 @@ transform:translateY(-2px);
 
 background:#159446;
 
+}.photo-gallery{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+margin-top:20px;
+
+}
+
+.photo-gallery img{
+
+width:100%;
+
+border-radius:20px;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.photo-gallery img:hover{
+
+transform:scale(1.02);
+
 }
