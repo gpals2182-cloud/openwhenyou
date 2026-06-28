@@ -113,26 +113,65 @@ onclick="toggleSection('voice', this)">
 
 <p>
 
-If you're still here...
+<hr>
 
-thank you for reading everything.
+<button
+class="gift-btn"
+data-open="🤍 One More Thing..."
+data-close="🤍 Hide"
+onclick="toggleSection('game', this)">
 
-I hope this little website makes you smile whenever you miss me.
+🤍 One More Thing...
 
-No matter how far apart we are,
+</button>
 
-you're always in my heart.
+<div id="game" class="gift-section">
 
-I love you.
+<h3>🤍 Would You Rather?</h3>
 
+<p style="text-align:center;">
+Let's see what you'd choose...
+❤️
 </p>
 
-<audio controls style="width:100%;margin-top:20px;">
+<div class="choice-box">
 
-<source src="../assets/audio/miss.mp3" type="audio/mpeg">
+<button class="choice-btn" onclick="choose(this)">
+🤗 One huge hug from me right now
+</button>
 
-Your browser does not support audio.
+<button class="choice-btn" onclick="choose(this)">
+📸 100 selfies from me
+</button>
 
-</audio>
+</div>
+
+<div class="choice-box">
+
+<button class="choice-btn" onclick="choose(this)">
+🤝 Hold my hand for a whole day
+</button>
+
+<button class="choice-btn" onclick="choose(this)">
+🫂 Cuddle with me all night
+</button>
+
+</div>
+
+<div class="choice-box">
+
+<button class="choice-btn" onclick="choose(this)">
+📅 Spend one week together now
+</button>
+
+<button class="choice-btn" onclick="choose(this)">
+💍 Wait one year but never be apart again
+</button>
+
+</div>
+
+<p style="text-align:center;margin-top:25px;">
+Now send me your answers later. 😘
+</p>
 
 </div>
