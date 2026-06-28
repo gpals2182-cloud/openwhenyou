@@ -206,8 +206,6 @@ function toggleSection(id, button) {
 }
 
 
-}
-
 let currentQuestions = [];
 let currentIndex = 0;
 
