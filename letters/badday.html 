@@ -1,0 +1,184 @@
+<h2>☁ I Had a Bad Day</h2>
+
+<p>Hi Wyatt.</p>
+
+<p>If you're reading this, I'm guessing today wasn't one of your best days.</p>
+
+<p>I wish I could be there with you right now. I'd probably make you sit down, hand you something warm to drink, and listen to everything you wanted to say... or even nothing at all if you didn't feel like talking.</p>
+
+<p>You don't always have to be strong. You don't have to pretend everything is okay just because you think you should.</p>
+
+<p>One of the things I love most about you is how much you care about the people around you. But sometimes I hope you'll show yourself the same kindness that you give everyone else.</p>
+
+<p>Whatever happened today doesn't define who you are.</p>
+
+<p>Tomorrow is another chance. And if tomorrow isn't better, then the day after that is too.</p>
+
+<p>I know long distance makes moments like this harder. I can't hug you through the screen, and that's probably the thing I hate most about being apart.</p>
+
+<p>So imagine this instead.</p>
+
+<p>I'm wrapping my arms around you, rubbing your back, and telling you, "It's okay. We'll get through this together."</p>
+
+<p>Because that's what we're doing, aren't we?</p>
+
+<p>No matter how difficult today feels, you don't have to carry it alone.</p>
+
+<p>Rest tonight. Eat something if you haven't. Drink some water. Be gentle with yourself.</p>
+
+<p>And remember...</p>
+
+<p>Someone in Korea is always cheering for you.</p>
+
+<p><strong>I love you.</strong></p>
+
+<p>Tomorrow will be a little brighter. And one day, I won't have to comfort you through a screen anymore.</p>
+
+<p>I'll be right beside you.</p>
+
+<hr>
+
+<button
+class="gift-btn"
+data-open="📷 Open Our Photos"
+data-close="📷 Hide Our Photos"
+onclick="toggleSection('photos', this)">
+
+📷 Open Our Photos
+
+</button>
+
+<div id="photos" class="gift-section">
+
+<div class="photo-gallery">
+
+<img src="../assets/photos/badday1.jpg" alt="Photo 1">
+
+<img src="../assets/photos/badday2.jpg" alt="Photo 2">
+
+<img src="../assets/photos/badday3.jpg" alt="Photo 3">
+
+</div
+</div>
+
+</div>
+
+<hr>
+
+<button
+class="gift-btn"
+data-open="🎥 Open Our Video"
+data-close="🎥 Hide Our Video"
+onclick="toggleSection('video', this)">
+
+🎥 Open Our Video
+
+</button>
+
+<div id="video" class="gift-section">
+
+<p>
+Even on your hardest days,
+I hope this little memory can make you smile. 🤍
+</p>
+
+<video controls class="memory-video">
+
+<source src="../assets/videos/badday.mp4" type="video/mp4">
+
+Your browser does not support this video.
+
+</video>
+
+</div>
+
+<hr>
+
+<button
+class="gift-btn"
+data-open="🎵 Open Our Song"
+data-close="🎵 Hide Our Song"
+onclick="toggleSection('music', this)">
+
+🎵 Open Our Song
+
+</button>
+
+<div id="music" class="gift-section">
+
+<div class="music-card">
+
+<div class="music-cover">
+🎵
+</div>
+
+<div class="music-info">
+
+<h4>Count on Me</h4>
+
+<p>
+Whenever life feels heavy,
+remember that you'll never have to carry it alone.
+I'll always be here for you. 🤍
+</p>
+
+<a
+href="https://open.spotify.com/search/Count%20on%20Me%20Bruno%20Mars"
+target="_blank"
+class="spotify-btn">
+
+▶ Listen on Spotify
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<button
+class="gift-btn"
+data-open="🤍 One More Thing..."
+data-close="🤍 Hide"
+onclick="toggleSection('voice', this)">
+
+🤍 One More Thing...
+
+</button>
+
+<div id="voice" class="gift-section">
+
+<h3>A Little Message For You 🤍</h3>
+
+<p>
+
+I know some days feel heavier than others.
+
+But no matter how difficult today was,
+I'm always on your side.
+
+Even if we're thousands of kilometers apart,
+you'll never face anything alone.
+
+Take a deep breath.
+Get some rest.
+
+Tomorrow is a new day,
+and I'll still be here cheering for you.
+
+I love you.
+
+</p>
+
+<audio controls style="width:100%;margin-top:20px;">
+
+<source src="../assets/audio/badday.mp3" type="audio/mpeg">
+
+Your browser does not support audio.
+
+</audio>
+
+</div>
